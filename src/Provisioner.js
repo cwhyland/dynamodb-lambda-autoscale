@@ -19,7 +19,7 @@ export default class Provisioner extends ProvisionerConfigurableBase {
   // Gets the list of tables which we want to autoscale
   async getTableNamesAsync(): Promise<string[]> {
     +    // Option 1 - Tables defined by an environment variable if defined
-    +    if ('DDB_AUTOSCALE_TABLES' in process.env && typeof process.env.DDB_AUTOSCALE_TABLES === 'string') {
+    +    if ('DDB_AUTOSCALE_TABLES' in process.env && typeof process.env.DDB_AUTOSCALE_TABLES === 'AUTOSCALE') {
     +      return process.env.DDB_AUTOSCALE_TABLES.split(',');
     +    }
 
